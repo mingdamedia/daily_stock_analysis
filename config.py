@@ -37,10 +37,10 @@ class Config:
     feishu_folder_token: Optional[str] = None  # 目标文件夹 Token
 
     # === 数据源 API Token ===
-    tushare_token: Optional[str] = None
+    tushare_token: Optional[str] = os.getenv('TUSHARE_TOKEN')
     
     # === AI 分析配置 ===
-    gemini_api_key: Optional[str] = None
+    gemini_api_key: Optional[str] = os.getenv('GEMINI_API_KEY')
     gemini_model: str = "gemini-3-flash-preview"  # 主模型
     gemini_model_fallback: str = "gemini-2.5-flash"  # 备选模型
     
@@ -55,7 +55,7 @@ class Config:
     openai_model: str = "gpt-4o-mini"  # OpenAI 兼容模型名称
     
     # === 搜索引擎配置（支持多 Key 负载均衡）===
-    tavily_api_keys: List[str] = field(default_factory=list)  # Tavily API Keys
+    tavily_api_keys: List[str] = os.getenv('TAVILY_API_KEYS')  # Tavily API Keys
     serpapi_keys: List[str] = field(default_factory=list)  # SerpAPI Keys
     
     # === 通知配置（可同时配置多个，全部推送）===
