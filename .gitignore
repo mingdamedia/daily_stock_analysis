@@ -1,6 +1,5 @@
 # 环境变量文件（包含敏感信息，禁止提交）
 .env
-GEMINI_API_KEY=AIzaSyBK4RkpBa4IIT7N7OD0C-3ya06gSbsthtc
 .env.*
 *.env
 *.env.local
